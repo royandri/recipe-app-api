@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 class AdminSiteTests(TestCase):
-    
     def setUp(self):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
@@ -33,7 +32,6 @@ class AdminSiteTests(TestCase):
 
         self.assertEqual(res.status_code, 200)
     
-
     def test_create_user_page(self):
         # Test that the crate user page works
         url = reverse('admin:core_user_add')
